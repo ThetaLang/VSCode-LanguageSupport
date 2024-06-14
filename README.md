@@ -4,6 +4,8 @@
 
 This Visual Studio Code extension provides syntax highlighting support for the Theta programming language. It enhances the editing experience by colorizing syntax elements such as keywords, variables, functions, comments, and more, making code easier to read and understand.
 
+<img width="1166" alt="Screen Shot 2024-06-14 at 5 56 00 PM" src="https://github.com/alexdovzhanyn/ThetaLanguageSupport-VSCode/assets/9296866/823c5743-7dcb-48fe-8406-a2ee100ba673">
+
 ## Features
 
 - **Syntax Highlighting**: Colorizes various syntax elements including keywords, variables, functions, and comments.
@@ -32,16 +34,3 @@ After installing the extension, it will automatically highlight Theta syntax in 
 - **Types**: Recognizes and highlights types within `< >`, supporting nested types.
 - **Operators**: Highlighted for clarity, including arithmetic and logical operators.
 - **Comments**: Single-line `//` and multi-line `/- ... -/` comments are supported.
-
-## Example
-
-```theta
-capsule MyCapsule
-{
-    // Define a function
-    distance<String> = meow<List> -> {
-        // Function body
-        x<String>(arg1, arg2);
-        y<List>(arg3);
-    }
-}
