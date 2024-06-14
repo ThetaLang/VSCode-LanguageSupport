@@ -1,0 +1,161 @@
+{
+  "scopeName": "source.theta",
+  "repository": {
+    "nested": {
+      "patterns": [
+        {
+          "name": "entity.name.type.theta",
+          "begin": "<",
+          "end": ">",
+          "patterns": [
+            {
+              "match": "\\b[A-Z][a-zA-Z0-9_]*\\b",
+              "name": "entity.name.type.theta"
+            },
+            {
+              "include": "#nested"
+            }
+          ],
+          "captures": {
+            "1": { "name": "entity.name.type.theta" }
+          },
+          "beginCaptures": {
+            "0": { "name": "keyword.operator.theta" }
+          },
+          "endCaptures": {
+            "0": { "name": "keyword.operator.theta" }
+          }
+        }
+      ]
+    }
+  },
+  "fileTypes": ["th"],
+  "patterns": [
+    {
+      "name": "constant.numeric.theta",
+      "match": "\\b\\d+(?:\\.\\d+)?\\b"
+    },
+    {
+      "name": "string.quoted.single.theta",
+      "begin": "'",
+      "end": "'"
+    },
+    {
+      "name": "variable.language.theta",
+      "match": "\\b(true|false)\\b"
+    },
+    {
+      "name": "punctuation.definition.comment.theta",
+      "begin": "//",
+      "end": "$"
+    },
+    {
+      "name": "punctuation.definition.comment.multiline.theta",
+      "begin": "\\/-",
+      "end": "-\\/",
+      "captures": {
+        "0": { "name": "punctuation.definition.comment.multiline.theta" }
+      }
+    },
+    {
+      "name": "entity.name.type.theta",
+      "begin": "<",
+      "end": ">",
+      "patterns": [
+        {
+          "match": "\\b[A-Z][a-zA-Z0-9_]*\\b",
+          "name": "entity.name.type.theta"
+        },
+        {
+          "include": "#nested"
+        }
+      ],
+      "captures": {
+        "1": { "name": "entity.name.type.theta" }
+      },
+      "beginCaptures": {
+        "0": { "name": "keyword.operator.theta" }
+      },
+      "endCaptures": {
+        "0": { "name": "keyword.operator.theta" }
+      }
+    },
+    {
+      "name": "keyword.operator.theta",
+      "match": "(==|=>|->|!=|<=|>=|<|>|!|=|\\|\\||\\&\\&|\\*\\*|\\+|\\-|\\*|\\/)"
+    },
+    
+    {
+      "name": "keyword.control.theta",
+      "match": "\\b(if|else|return)\\b"
+    },
+    {
+      "name": "keyword.control.link.theta",
+      "match": "\\b(link)\\b"
+    },
+    {
+      "name": "keyword.definition.capsule.theta",
+      "match": "\\b(capsule)(.*)\\b",
+      "captures": {
+        "2": { "name": "entity.name.type.class" }
+      }
+    },
+    {
+      "name": "keyword.definition.capsule.theta",
+      "match": "\\b(struct)(.*)\\b",
+      "captures": {
+        "2": { "name": "entity.name.type.class" }
+      }
+    },
+    {
+      "name": "entity.name.section.capsule.theta",
+      "match": "\\b(capsule\\s+\\w+)\\b"
+    },
+    
+    {
+      "name": "meta.function.theta",
+      "match": "([a-zA-Z_][a-zA-Z0-9_]*)(\\()(.*)(\\))",
+      "captures": {
+        "1": { "name": "entity.name.function.theta" },
+        "2": { "name": "punctuation.definition.parameters.theta" },
+        "3": {
+          "patterns": [
+            {
+              "match": "([a-zA-Z_][a-zA-Z0-9_]*)(,\\s*)?",
+              "captures": {
+                "1": { "name": "variable.parameter.function.theta" },
+                "2": { "name": "punctuation.separator.comma.theta", "optional": true }
+              }
+            }
+          ]
+        },
+        "4": { "name": "punctuation.definition.parameters.theta" }
+      }
+    },
+    {
+      "name": "meta.function.declaration.theta",
+      "match": "\\b([a-zA-Z_][a-zA-Z0-9_]*)(<.*\\s*)(=)(.*)(->)",
+      "captures": {
+        "1": { "name": "entity.name.function.theta" },
+        "2": {
+          "patterns": [
+            {
+              "include": "#nested"
+            }
+          ]
+        },
+        "3": { "name": "keyword.operator.theta" },
+        "4": {
+          "patterns": [
+            {
+              "include": "#nested"
+            }
+          ]
+        },
+        "5": { "name": "keyword.operator.theta" }
+      },
+      "end": "\\s"
+    }
+  
+  ]
+}

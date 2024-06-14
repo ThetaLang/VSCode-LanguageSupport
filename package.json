@@ -1,0 +1,25 @@
+{
+  "name": "theta-language-support",
+  "displayName": "Theta Language Support",
+  "description": "Syntax highlighting for the Theta programming language",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.83.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "theta",
+      "aliases": ["Theta", "theta"],
+      "extensions": [".th", ".theta"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "theta",
+      "scopeName": "source.theta",
+      "path": "./syntaxes/theta.tmLanguage.json"
+    }]
+  }
+}
