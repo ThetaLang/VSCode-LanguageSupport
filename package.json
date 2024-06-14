@@ -14,13 +14,17 @@
   "categories": [
     "Programming Languages"
   ],
-  "icon": "./theta.png",
+  "icon": "./icons/theta.png",
   "contributes": {
     "languages": [{
       "id": "theta",
       "aliases": ["Theta", "theta"],
       "extensions": [".th", ".theta"],
-      "configuration": "./language-configuration.json"
+      "configuration": "./language-configuration.json",
+      "icon": {
+        "light": "./icons/file-icon.png",
+        "dark": "./icons/file-icon.png"
+      }
     }],
     "grammars": [{
       "language": "theta",
